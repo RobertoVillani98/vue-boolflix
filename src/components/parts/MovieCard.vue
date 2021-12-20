@@ -2,7 +2,14 @@
   <div class="card">
     <h2>{{ infos.title }}</h2>
     <h3>{{ infos.original_title }}</h3>
-    <p class="language">{{ infos.original_language }}</p>
+    <span v-if="infos.original_language == ''">Lingua non disponibile</span>
+    <img
+      v-else
+      :src="
+        require('../../assets/img/flags/' + infos.original_language + '.png')
+      "
+      class="language"
+    />
     <p class="Vote">{{ infos.vote_average }}</p>
   </div>
 </template>
@@ -19,5 +26,8 @@ export default {
 <style lang="scss" scoped>
 .card {
   padding: 15px 40px;
+  .language {
+    max-width: 30px;
+  }
 }
 </style>
