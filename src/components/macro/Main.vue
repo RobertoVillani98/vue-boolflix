@@ -32,4 +32,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #131414;
+}
 </style>

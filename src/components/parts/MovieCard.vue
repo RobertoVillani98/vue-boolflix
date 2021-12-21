@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <img
-      :src="'https://image.tmdb.org/t/p/w342' + infos.poster_path"
+      :src="'https://image.tmdb.org/t/p/w185' + infos.poster_path"
       :alt="'Poster ' + infos.id"
     />
     <h2 v-if="type == 'movie'">{{ infos.title }}</h2>
@@ -41,17 +41,29 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-  padding: 15px 40px;
+  width: calc(100% / 5);
+  padding: 15px 0px;
+  text-align: center;
+  margin: 20px 0;
+
   .language {
     max-width: 30px;
     margin-right: 10px;
   }
+
   .votes {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
+
   .Vote {
     color: rgb(219, 219, 0);
+  }
+
+  img {
+    border-radius: 20px;
+    border: 1px solid white;
   }
 }
 </style>
