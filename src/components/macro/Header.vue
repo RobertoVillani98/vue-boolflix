@@ -41,6 +41,20 @@ export default {
           .catch(function (error) {
             console.log(error);
           });
+        axios
+          .get("https://api.themoviedb.org/3/search/tv", {
+            params: {
+              api_key: "a5d4aefd1e1ce7fe4d2d5ca9a4b8ac1d",
+              query: this.searchText,
+              language: "it-IT",
+            },
+          })
+          .then(function (response) {
+            dataShared.tvShows = response.data.results;
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
       }
     },
   },
