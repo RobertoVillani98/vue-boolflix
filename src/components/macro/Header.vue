@@ -41,6 +41,7 @@ export default {
           .catch(function (error) {
             console.log(error);
           });
+
         axios
           .get("https://api.themoviedb.org/3/search/tv", {
             params: {
